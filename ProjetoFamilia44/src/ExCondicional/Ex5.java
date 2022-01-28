@@ -15,7 +15,7 @@ public class Ex5 {
 		System.out.println("\n 2  Lasanha 	    	------20,00 ");
 		System.out.println("\n 3  Strogonoff 		------18,00 ");
 		System.out.println("\n 4  Bife Acebolado 	-------15,00");
-		System.out.println("\n 5  Pão com ovo 	    -------5,00 ");
+		System.out.println("\n 5  Pão com ovo         -------5,00 ");
 		
 		op = entrada.nextInt();
 		System.out.println("\n Você aceita pagar 10% de gorjeta para o garçom? ");
