@@ -20,8 +20,8 @@ public class Ex4 {
 		float [][] matriz2 = new float [2][2];
 		float [][] matriz3 = new float [2][2];
 		float [][] matriz4 = new float [2][2];
-		int i = 0,x = 0;
-		final int num = 3;
+		int i = 0,x = 0,op = 0;
+		final int num = 3;//constante
 		
 		Scanner entrada = new Scanner(System.in);
 		
@@ -39,24 +39,6 @@ public class Ex4 {
 				matriz2 [i][x] = entrada.nextFloat();			
 			}
 		}
-		System.out.print(" 1° Matriz");
-		for(i = 0;i < 2; i++) {
-			for(x = 0;x < 2; x++) {
-				 
-				System.out.print("\n " +matriz [i][x]+"\t");
-			}
-		}
-		System.out.println("\n");
-		
-		System.out.print(" 2° Matriz");
-		for(i = 0;i < 2; i++) {
-			for(x = 0;x < 2; x++) {
-				 
-				System.out.print("\n " +matriz2 [i][x]);
-			}
-		}
-		System.out.println("\n");
-		
 		System.out.print(" 3° Matriz");
 		for(i = 0;i < 2; i++) {
 			for(x = 0;x < 2; x++) {
@@ -64,23 +46,73 @@ public class Ex4 {
 				System.out.print("\n " +matriz3 [i][x]+"\t");
 			}
 		}
-		System.out.println("\n");
+	
 		
-		System.out.print(" 4° Matriz");
-		for(i = 0;i < 2; i++) {
-			for(x = 0;x < 2; x++) {
-				matriz4 [i][x] = matriz [i][x] - matriz2 [i][x];
-				System.out.print("\n " +matriz4 [i][x]);
-			}
-		}
-		System.out.println("\n");
+		System.out.println("\t\tSelecione uma opção");
+		System.out.println("(1) somar as duas matrizes");
+		System.out.println("(2) subtrair a primeira matriz da segunda");
+		System.out.println("(3) adicionar uma constante as duas matrizes");
+		System.out.println("(4) imprimir as matrizes");
+		System.out.println("\n Digite sua Opção: ");
+		op = entrada.nextInt();
 		
-		System.out.print(" 3° Matriz constande valor 3 sera adicionado: ");
-		for(i = 0;i < 2; i++) {
-			for(x = 0;x < 2; x++) {
-				matriz3 [i][x] += num;
-				System.out.print("\n " +matriz3 [i][x]+"\t");
+		switch(op) {
+		case 1:
+			for(i = 0;i < 2; i++) {
+				for(x = 0;x < 2; x++) {
+					System.out.print("\t["+(matriz3[i][x])+"] ");
+				}
+				System.out.print("\n");
 			}
+			break;
+		case 2:
+			System.out.print("\n 4° Matriz Subtração \n");
+			for(i = 0;i < 2; i++) {
+				for(x = 0;x < 2; x++) {
+					matriz3 [i][x] = matriz [i][x] - matriz2 [i][x];
+		
+				}
+			}
+			for(i = 0;i < 2; i++) {
+				for(x = 0;x < 2; x++) {
+					System.out.print("["+(matriz4[i][x])+"] ");
+				}
+				System.out.print("\n");
+			}
+			break;
+		case 3:
+			System.out.print("\n 3° Matriz Soma \n");
+			for(i = 0;i < 2; i++) {
+				for(x = 0;x < 2; x++) {
+					matriz3 [i][x] += num;
+				}
+			}
+			for(i = 0;i < 2; i++) {
+				for(x = 0;x < 2; x++) {
+					System.out.print("["+(matriz3[i][x])+"] ");
+				}
+				System.out.print("\n");
+			}
+			break;	
+		case 4:
+			System.out.print("\n 4° imprimir matrizes: \n");
+			 
+			for(i = 0;i < 2; i++) {
+				for(x = 0;x < 2; x++) {
+					System.out.print("["+(matriz[i][x])+"] ");
+				}
+				System.out.print("\n");
+			}
+			for(i = 0;i < 2; i++) {
+				for(x = 0;x < 2; x++) {
+					System.out.print("["+(matriz2[i][x])+"] ");
+				}
+				System.out.print("\n");
+			}
+			break;
+		default:
+			System.out.println("\n Opção inválida....");
+			break;
 		}
 	}
 }
