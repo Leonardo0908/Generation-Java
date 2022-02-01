@@ -2,7 +2,7 @@ package ExPOO;
 
 import java.util.Scanner;
 
-public class Aviao {
+public class Ex2Aviao {
 	
 	private String nome;
 	private String marca;
@@ -12,7 +12,7 @@ public class Aviao {
 	
 	Scanner entrada = new Scanner(System.in);
 	
-	public Aviao (String nome,String mar,String voo,int tam ) {
+	public Ex2Aviao (String nome,String mar,String voo,int tam ) {
 		this.nome = nome;
 		this.marca = mar;
 		this.voo = voo;
