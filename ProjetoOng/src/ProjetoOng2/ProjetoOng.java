@@ -1,8 +1,17 @@
 package ProjetoOng2;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ProjetoOng {
+	
+	public static int TratamentoErro(int idade, int codigo) throws ArithmeticException{
+		return 0;
+	}
+	public static int TratamentoErro1(int op) throws ArithmeticException{
+		return 0;
+	}
+	
 	
 	public static void main(String[] args) {
 		
@@ -23,6 +32,11 @@ public class ProjetoOng {
 		Verbas ve2 = new Verbas("","",0,0,0);
 		
 		do {
+			boolean continueLoop1 = true;
+			do {
+			
+			try {
+			
 			System.out.println("\n\n\t   Menu de Opções... ");
 			System.out.println("\n --Cadastrar novo voluntario -- digite 1");
 			System.out.println("\n --Cadastrar nova     Ong    -- digite 2");
@@ -35,7 +49,10 @@ public class ProjetoOng {
 			switch (op) {
 			
 			case 1:
+				boolean continueLoop = true;
+				do {
 				
+				try {
 				System.out.println("\n --Cadastrar novo voluntario -- digite 1");
 				
 				System.out.println("\n Digite o nome: ");
@@ -47,12 +64,35 @@ public class ProjetoOng {
 				System.out.println("\n Digite o código: ");
 				codigo1 = entrada.nextInt();
 				
+				int resultado = TratamentoErro(idade1,codigo1);
+				continueLoop = false;
+			
 				Voluntario vol = new Voluntario(nome1,cpf1,idade1,codigo1);
+				
 				vol2 = vol;
 				
 				vol.imprimirVoluntario();
 				break;
+				}
+				catch(InputMismatchException inputMismatchExceptio) {//exceção de entrada de 
+					
+					System.err.printf("\n Exception: %s ",inputMismatchExceptio);
+					entrada.nextLine();
+					System.out.println("\n Você deve entrar com um valor do tipo inteiro. \n Por favor tente novamente...");
+				}
+				catch(ArithmeticException arithmeticException ) {
+					System.err.printf("\n Exception: %s ",arithmeticException);
+					
+					System.out.println("\n Zero é um denominador inválido. \n Por favor tente novamente...");
+				}
+				}while(continueLoop);
+				
+				
 			case 2:
+				boolean continueLoo = true;
+				do {
+				
+				try {
 				System.out.println("\n --Cadastrar nova     Ong    -- digite 2");
 				
 				System.out.println("\n Digite o nome: ");
@@ -67,9 +107,31 @@ public class ProjetoOng {
 				Ong ong = new Ong(nome1,cpf1,idade1,codigo1);
 				ong2 = ong;
 				
+				int resultado = TratamentoErro(idade1,codigo1);
+				continueLoo = false;
+				
 				ong.imprimirOng();
 				break;
+				
+				}
+				catch(InputMismatchException inputMismatchExceptio) {//exceção de entrada de 
+				
+					System.err.printf("\n Exception: %s ", inputMismatchExceptio);
+					entrada.nextLine();
+					System.out.println("\n Você deve entrar com um valor do tipo inteiro. \n Por favor tente novamente...");
+				}
+				catch(ArithmeticException arithmeticException ) {
+					System.err.printf("\n Exception: %s ", arithmeticException);
+					
+						System.out.println("\n Zero é um denominador inválido. \n Por favor tente novamente...");
+				}
+			}while(continueLoo);
+					
 			case 3:
+				boolean continueLo = true;
+				do {
+				
+				try {
 				System.out.println("\n --Cadastrar novo   Paceiro  -- digite 3");
 				
 				System.out.println("\n Digite o nome: ");
@@ -84,13 +146,34 @@ public class ProjetoOng {
 				Parceiros par = new Parceiros(nome1,cpf1,idade1,codigo1);;
 				par2 = par;
 				
+				int resultado = TratamentoErro(idade1,codigo1);
+				continueLo = false;
+				
 				par.imprimirParceiro();
 				break;
+				
+				
+				}
+				catch(InputMismatchException inputMismatchExceptio) {//exceção de entrada de 
+				
+					System.err.printf("\n Exception: %s ", inputMismatchExceptio);
+					entrada.nextLine();
+					System.out.println("\n Você deve entrar com um valor do tipo inteiro. \n Por favor tente novamente...");
+				}
+				catch(ArithmeticException arithmeticException ) {
+					System.err.printf("\n Exception: %s ", arithmeticException);
+				
+					System.out.println("\n Zero é um denominador inválido. \n Por favor tente novamente...");
+				}
+			}while(continueLo);
+				
 			case 4:	
+				
 				System.out.println("\n --Entrada e Saida de Verbas -- digite 4");
 				System.out.println("\n Digite 0 para entrada \n \t ou \n Digite 1 para saida");
 				// variavel num para poder cair no laço if entrada ou saida de verba.
 				num = entrada.nextInt();
+				
 				
 				if(num == 0) {
 					
@@ -142,6 +225,7 @@ public class ProjetoOng {
 				
 				//verba.imprimirVerba();
 				break;
+				
 			case 5:
 				System.out.println("\n --Imprimir Informações      -- digite 5");
 				
@@ -168,6 +252,27 @@ public class ProjetoOng {
 				System.out.println("\n Opção Inválida...");
 				}
 			}
+			///
+			///
+			
+			int resultado = TratamentoErro1(op);
+			
+			continueLoop1 = false;
+		
+			}
+			catch(InputMismatchException inputMismatchExceptio) {//exceção de entrada de 
+				
+				System.err.printf("\n Exception: %s ",inputMismatchExceptio);
+				entrada.nextLine();
+				System.out.println("\n Você deve entrar com um valor do tipo inteiro. \n Por favor tente novamente...");
+			}
+			catch(ArithmeticException arithmeticException ) {
+				System.err.printf("\n Exception: %s ",arithmeticException);
+				
+				System.out.println("\n Zero é um denominador inválido. \n Por favor tente novamente...");
+			}
+			}while(continueLoop1);
+		
 		}while(op != 0 );
 		
 		System.out.println("\n Fim do Programa...");
