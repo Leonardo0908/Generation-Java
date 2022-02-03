@@ -29,11 +29,11 @@ public class Verbas extends Pessoa{
 	}
 	
 	public void imprimirVerba() {
-		System.out.println("\n Nome: "+getNome()+"\n CPF: "+getCpf()+"\n Idade Ong: "+getIdade()+
+		System.out.println("\n Nome: "+getNome()+"\n CPF: "+getCpf()+"\n Idade : "+getIdade()+
 				"\n Codigo do Voluntario: "+codigoVerba+"\n com Valor de entrade de R$: "+verba);
 	}
 	public void imprimirVerba2() {
-		System.out.println("\n Nome: "+getNome()+"\n CPF: "+getCpf()+"\n Idade Ong: "+getIdade()+
+		System.out.println("\n Nome: "+getNome()+"\n CPF: "+getCpf()+"\n Idade : "+getIdade()+
 				"\n Codigo do Voluntario: "+codigoVerba+"\n com Valor de Saida de R$: "+verba);
 	}
 }

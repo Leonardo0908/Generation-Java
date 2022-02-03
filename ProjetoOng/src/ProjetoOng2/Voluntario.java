@@ -30,6 +30,9 @@ public class Voluntario extends Pessoa{
 		System.out.println("\n Nome: "+getNome()+"\n CPF: "+getCpf()+"\n Idade: "+getIdade()+
 				"\n Codigo do Voluntario: "+codigoV  );
 	}
+	
+}	
+	
 	/*public void validaCpf() {
 		if(getCpf().length() !=11) {
 			System.out.println("\n--CPF Inválido!!!--");
@@ -45,4 +48,4 @@ public class Voluntario extends Pessoa{
 		}
 	}
 	*/
-}
+

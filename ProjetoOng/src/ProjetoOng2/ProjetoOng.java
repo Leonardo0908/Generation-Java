@@ -15,7 +15,13 @@ public class ProjetoOng {
 		//Pessoa Voluntario = new Pessoa();
 		//Pessoa Parceiro = new Pessoa();
 		//Pessoa Ong = new Pessoa();
-	
+		
+		Voluntario vol2 = new Voluntario("","",0,0);
+		Ong ong2 = new Ong("","",0,0);
+		Parceiros par2 = new Parceiros("","",0,0);
+		Verbas ve = new Verbas("","",0,0,0);
+		Verbas ve2 = new Verbas("","",0,0,0);
+		
 		do {
 			System.out.println("\n\n\t   Menu de Opções... ");
 			System.out.println("\n --Cadastrar novo voluntario -- digite 1");
@@ -29,6 +35,7 @@ public class ProjetoOng {
 			switch (op) {
 			
 			case 1:
+				
 				System.out.println("\n --Cadastrar novo voluntario -- digite 1");
 				
 				System.out.println("\n Digite o nome: ");
@@ -41,6 +48,8 @@ public class ProjetoOng {
 				codigo1 = entrada.nextInt();
 				
 				Voluntario vol = new Voluntario(nome1,cpf1,idade1,codigo1);
+				vol2 = vol;
+				
 				vol.imprimirVoluntario();
 				break;
 			case 2:
@@ -55,9 +64,10 @@ public class ProjetoOng {
 				System.out.println("\n Digite o código: ");
 				codigo1 = entrada.nextInt();
 				
-				Ong ong1 = new Ong("Amigos do Planeta","32165498701",5,54345);
+				Ong ong = new Ong(nome1,cpf1,idade1,codigo1);
+				ong2 = ong;
 				
-				ong1.imprimirOng();
+				ong.imprimirOng();
 				break;
 			case 3:
 				System.out.println("\n --Cadastrar novo   Paceiro  -- digite 3");
@@ -71,9 +81,10 @@ public class ProjetoOng {
 				System.out.println("\n Digite o código: ");
 				codigo1 = entrada.nextInt();
 				
-				Parceiros parceiro = new Parceiros("Keyla","98765432101",20,54322);
+				Parceiros par = new Parceiros(nome1,cpf1,idade1,codigo1);;
+				par2 = par;
 				
-				parceiro.imprimirParceiro();
+				par.imprimirParceiro();
 				break;
 			case 4:	
 				System.out.println("\n --Entrada e Saida de Verbas -- digite 4");
@@ -94,9 +105,13 @@ public class ProjetoOng {
 					System.out.println("\n Digite o valor da Verba: ");
 					ver = entrada.nextInt();
 					
-					Verbas verba = new Verbas("Lary","98765432102",18,54323,2000);
+					Verbas verba = new Verbas(nome1,cpf1,idade1,codigo1,ver);
+					ve = verba;
+					
 					//Adicionando verba ao total 
 					total = total + ver;
+					
+					System.out.println("\n Valor total em caixa é R$ "+total);
 					
 					verba.imprimirVerba();
 					System.out.println(total);
@@ -113,9 +128,13 @@ public class ProjetoOng {
 					System.out.println("\n Digite o valor da Verba: ");
 					ver2 = entrada.nextInt();
 					
-					Verbas verba2 = new Verbas("Leo","98765432103",40,54324,2005);
+					Verbas verba2 = new Verbas(nome1,cpf1,idade1,codigo1,ver2);
+					ve2 = verba2;
+					
 					//subtraindo verba do total
 					total -=ver2;
+					
+					System.out.println("\n Valor total em caixa é R$: "+total);
 					
 					verba2.imprimirVerba2();
 					System.out.println(total);
@@ -126,9 +145,23 @@ public class ProjetoOng {
 			case 5:
 				System.out.println("\n --Imprimir Informações      -- digite 5");
 				
+				System.out.println("\n voluntario ");
+				vol2.imprimirVoluntario();
 				
-				//verba.imprimirVerba();
-				//verba2.imprimirVerba2();
+				System.out.println("\n  Ong  ");
+				ong2.imprimirOng();
+				
+				System.out.println("\n Parceiro");
+				par2.imprimirParceiro();
+				
+				System.out.println("\n Verba de Entrada... ");
+				ve.imprimirVerba();
+				
+				System.out.println("\n Verba de Saída... ");
+				ve2.imprimirVerba2();
+				
+				System.out.println("\n Valor total em caixa é R$ \n"+total);
+				
 				break;
 			default:
 				if(op != 0) {
