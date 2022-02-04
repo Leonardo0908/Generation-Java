@@ -1,10 +1,6 @@
 package ProjetoOng2;
 
-import java.util.Scanner;
-
 public class Pessoa {
-	
-	Scanner leia = new Scanner(System.in);
 	
 	private String nome;
 	private String cpf;

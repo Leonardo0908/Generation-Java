@@ -42,12 +42,12 @@ public class ProjetoOng {
 				try {//verificação se a erro no Menu
 				
 				System.out.println("\n\n\t   Menu de Opções... ");
-				System.out.println("\n --Cadastrar novo voluntario -- digite 1");
-				System.out.println("\n --Cadastrar nova     Ong    -- digite 2");
-				System.out.println("\n --Cadastrar novo   Paceiro  -- digite 3");
-				System.out.println("\n --Entrada e Saida de Verbas -- digite 4");
-				System.out.println("\n --Imprimir Informações      -- digite 5");
-				System.out.println("\n       -- DIGITE 0 PARA FINALIZAR  --");
+				System.out.println("\n -- Cadastrar novo voluntario -- digite 1");
+				System.out.println("\n -- Cadastrar nova     Ong    -- digite 2");
+				System.out.println("\n -- Cadastrar novo   Parceiro  -- digite 3");
+				System.out.println("\n -- Entrada e Saída de Verbas -- digite 4");
+				System.out.println("\n --    Imprimir Informações  -- digite 5");
+				System.out.println("\n      -- DIGITE 0 PARA FINALIZAR  --");
 				op = entrada.nextInt();
 				
 				switch (op) {
@@ -78,9 +78,11 @@ public class ProjetoOng {
 						}
 						catch(InputMismatchException inputMismatchExceptio) {// função para tratamento de erro  
 							
-							System.err.printf("\n Exception: %s ",inputMismatchExceptio);
+							//System.err.printf("\n Exception: %s ",inputMismatchExceptio);
 							entrada.nextLine();
-							System.out.println("\n Você deve entrar com um valor do tipo inteiro. \n Por favor tente novamente...");
+							System.err.println("\n\t   Opção inválida ");
+							System.out.println("");
+							System.out.println("\n     Por favor tente novamente...");
 						}
 						}while(continueLoop);
 						break;
@@ -101,29 +103,31 @@ public class ProjetoOng {
 						System.out.println("\n Digite o código: ");
 						codigo1 = entrada.nextInt();
 						
-						Ong ong = new Ong(nome1,cpf1,idade1,codigo1);
-						ong2 = ong;
-						
 						continueLoo = false;
 						
+						Ong ong = new Ong(nome1,cpf1,idade1,codigo1);
+						
+						ong2 = ong;
+						
 						ong.imprimirOng();
-					
 						}
 						catch(InputMismatchException inputMismatchExceptio) {//exceção de entrada de 
 						
-							System.err.printf("\n Exception: %s ", inputMismatchExceptio);
+							//System.err.printf("\n Exception: %s ", inputMismatchExceptio);
 							entrada.nextLine();
-							System.out.println("\n Você deve entrar com um valor do tipo inteiro. \n Por favor tente novamente...");
+							System.err.println("\n\t   Opção inválida ");
+							System.out.println("");
+							System.out.println("\n     Por favor tente novamente...");
 						}
-						break;
+						
 					}while(continueLoo);
-							
+						break;
 					case 3:
 						boolean continueLo = true;
 						do {
 						
 							try {
-							System.out.println("\n --Cadastrar novo   Paceiro  -- digite 3");
+							System.out.println("\n --Cadastrar novo   Parceiro  -- digite 3");
 							
 							System.out.println("\n Digite o nome: ");
 							nome1 = entrada.next();
@@ -142,11 +146,13 @@ public class ProjetoOng {
 							par.imprimirParceiro();
 						
 							}
-							catch(InputMismatchException inputMismatchExceptio) {//exceção de entrada de 
+							catch(InputMismatchException inputMismatchException) {//exceção de entrada de 
 							
-								System.err.printf("\n Exception: %s ", inputMismatchExceptio);
+								//System.err.printf("\n Exception: %s ", inputMismatchExceptio);
 								entrada.nextLine();
-								System.out.println("\n Você deve entrar com um valor do tipo inteiro. \n Por favor tente novamente...");
+								System.err.println("\n\t   Opção inválida ");
+								System.out.println("");
+								System.out.println("\n     Por favor tente novamente...");
 							}
 							
 						}while(continueLo);
@@ -158,7 +164,7 @@ public class ProjetoOng {
 						
 							try {
 							System.out.println("\n --Entrada e Saida de Verbas -- digite 4");
-							System.out.println("\n Digite 0 para entrada \n \t ou \n Digite 1 para saida");
+							System.out.println("\n Digite 0 para entrada \n \t ou \n Digite 1 para saída");
 							// variavel num para poder cair no laço if entrada ou saida de verba.
 							num = entrada.nextInt();
 							
@@ -181,10 +187,10 @@ public class ProjetoOng {
 									//Adicionando verba ao total 
 									total = total + ver;
 									
-									System.out.println("\n Valor total em caixa é R$ "+total);
+									System.out.println("\n Valor total em caixa : R$"+total);
 									
 									verba.imprimirVerba();
-									System.out.println("\n Valor Total do em Caixa: "+total);
+									System.out.println("\n Valor Total do em Caixa : R$"+total);
 									
 								}else if(num == 1) {
 									
@@ -206,10 +212,10 @@ public class ProjetoOng {
 									//subtraindo verba do total
 									total -=ver2;
 									
-									System.out.println("\n Valor total em caixa é R$: "+total);
+									System.out.println("\n Valor total em caixa : R$"+total);
 									
 									verba2.imprimirVerba2();
-									System.out.println("\n Valor Total do em Caixa: "+total);
+									System.out.println("\n Valor Total do em Caixa : R$"+total);
 									
 								}else {//se caso a pessoa não escolher caso 1 ou caso 2
 									System.out.println("\n Opção inválida...");
@@ -220,9 +226,11 @@ public class ProjetoOng {
 							}
 						catch(InputMismatchException inputMismatchExceptio) {//exceção de entrada de 
 						
-							System.err.printf("\n Exception: %s ", inputMismatchExceptio);
+							//System.err.printf("\n Exception: %s ", inputMismatchExceptio);
 							entrada.nextLine();
-							System.out.println("\n Você deve entrar com um valor do tipo inteiro. \n Por favor tente novamente...");
+							System.err.println("\n\t   Opção inválida ");
+							System.out.println("");
+							System.out.println("\n     Por favor tente novamente...");
 						}
 						
 					}while(continueL);
@@ -245,12 +253,13 @@ public class ProjetoOng {
 						System.out.println("\n Verba de Saída... ");
 						ve2.imprimirVerba2();
 						
-						System.out.println("\n Valor total em caixa é R$ \n"+total);
+						System.out.println("\n Valor total em caixa é : R$"+total);
 						
 						break;
 					default:
 						if(op != 0) {
 						System.out.println("\n Opção Inválida...");
+						System.out.println("\n Por favor tente novamente...");
 						}
 					}
 				
@@ -259,9 +268,11 @@ public class ProjetoOng {
 					}
 					catch(InputMismatchException inputMismatchExceptio) {//exceção de entrada de 
 						
-						System.err.printf("\n Exception: %s ",inputMismatchExceptio);
+						//System.err.printf("\n Exception: %s ",inputMismatchExceptio);
 						entrada.nextLine();
-						System.out.println("\n Você deve entrar com um valor do tipo inteiro. \n Por favor tente novamente...");
+						System.err.println("\n\t   Opção inválida ");
+						System.out.println("");
+						System.out.println("\n     Por favor tente novamente...");
 					}
 				
 				}while(continueLoop1);
@@ -273,6 +284,7 @@ public class ProjetoOng {
 		}
 		
 		System.out.println("\n Fim do Programa...");
+		System.out.println("\n Obrigado por utilizar o Programa...");
 	}
 }
 //Runtime.getRuntime().exec("clear");

@@ -1,6 +1,5 @@
 package ProjetoOng2;
 
-import java.util.Scanner;
 
 public class Voluntario extends Pessoa{
 	
@@ -12,8 +11,6 @@ public class Voluntario extends Pessoa{
 	}
 	String nome1,cpf1;
 	int idade1,codigo1;
-	
-	Scanner entrada = new Scanner(System.in);
 	
 	
 	public int getCodigoV() {
@@ -32,20 +29,4 @@ public class Voluntario extends Pessoa{
 	}
 	
 }	
-	
-	/*public void validaCpf() {
-		if(getCpf().length() !=11) {
-			System.out.println("\n--CPF Inválido!!!--");
-		}else {
-			System.out.println("\n--CPF Válido!!!--");
-		}
-	}	
-	public void validaIdade() {
-		if(idade1 < 16 || idade1 > 60) {
-			System.out.println("\n Idade Inválida...");
-		}else {
-			System.out.println("\n Idade válida...");
-		}
-	}
-	*/
 
