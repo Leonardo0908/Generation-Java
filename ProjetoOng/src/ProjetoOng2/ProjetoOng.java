@@ -187,7 +187,7 @@ public class ProjetoOng {
 									//Adicionando verba ao total 
 									total = total + ver;
 									
-									System.out.println("\n Valor total em caixa : R$"+total);
+									//System.out.println("\n Valor total em caixa : R$"+total);
 									
 									verba.imprimirVerba();
 									System.out.println("\n Valor Total do em Caixa : R$"+total);
@@ -212,7 +212,7 @@ public class ProjetoOng {
 									//subtraindo verba do total
 									total -=ver2;
 									
-									System.out.println("\n Valor total em caixa : R$"+total);
+									//System.out.println("\n Valor total em caixa : R$"+total);
 									
 									verba2.imprimirVerba2();
 									System.out.println("\n Valor Total do em Caixa : R$"+total);
@@ -258,7 +258,7 @@ public class ProjetoOng {
 						break;
 					default:
 						if(op != 0) {
-						System.out.println("\n Opção Inválida...");
+						System.err.println("\n \tOpção Inválida...");
 						System.out.println("\n Por favor tente novamente...");
 						}
 					}
